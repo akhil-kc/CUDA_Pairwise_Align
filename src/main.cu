@@ -68,18 +68,11 @@ int main(int argc, char *argv[])
 	sequence2.seq_string=temp.seq_string;
 	sequence2.seq_length=temp.seq_length;
      }
-	cout<<"\n Reached here 1";
-	cout<<"\n Reached here 1";
-	cout<<"\n Reached here 1";
-	cout<<"\n Reached here 1";
     printf("\n Sequence 1: %s \t Length: %d",sequence1.seq_string,sequence1.seq_length);
     printf("\n Sequence 2: %s \t Length: %d",sequence2.seq_string,sequence2.seq_length);
     const int nx = sequence1.seq_length;
     const int ny = sequence2.seq_length;
-	cout<<"\n Reached here 2";
-	cout<<"\n Reached here 2";
-	cout<<"\n Reached here 2";
-    unsigned size=nx*ny;
+	    unsigned size=nx*ny;
     int *c,*temp; 
     int *d_c;  
     int **final;
@@ -94,12 +87,6 @@ int main(int argc, char *argv[])
 	final[0][i]=0;
     cudaMalloc((void **) &d_c, (nx)*sizeof(int));
     cudaCheckErrors("Failed to allocate device buffer");
-
-	cout<<"\n Reached here 3";
-	cout<<"\n Reached here 3";
-	cout<<"\n Reached here 3";
-	cout<<"\n Reached here 3";
-	cout<<"\n Reached here 3";
     cudaMalloc((void **) &d_sequence1, (nx)*sizeof(char));
     cudaCheckErrors("Failed to allocate device buffer");
     cudaMemcpy(d_sequence1, &sequence1.seq_string, (nx)*sizeof(char), cudaMemcpyHostToDevice);
@@ -109,12 +96,6 @@ int main(int argc, char *argv[])
     cudaCheckErrors("Failed to allocate device buffer");
     cudaMemcpy(d_sequence2, &sequence2.seq_string, (ny)*sizeof(char), cudaMemcpyHostToDevice);
     cudaCheckErrors("Failed to copy device buffer");
-
-	cout<<"\n Reached here 4";
-	cout<<"\n Reached here 4";
-	cout<<"\n Reached here 4";
-	cout<<"\n Reached here 4";
-	cout<<"\n Reached here 4";
     for (unsigned iteration=1;iteration<ny;iteration++)
     {
 	cout<<"\n Iteration"<<iteration<<endl;
